@@ -14,10 +14,10 @@ def handle_predicted_query_type(data):
 
 
 # Connect to the Flask-SocketIO server
-sio.connect('http://127.0.0.1:5000')
+sio.connect('http://192.168.1.8:5000')
 
 # Send a user query to the server
-user_query = {"query": "what"}
+user_query = {"query": "what is the"}
 sio.emit('user_query', json.dumps(user_query))
 
 user_query = {"query": "which"}

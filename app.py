@@ -27,6 +27,7 @@ class QueryProcessor:
 
 @app.route('/')
 def index():
+    print("test logging")
     return "<h1>Test App</h1>"
 
 
@@ -49,7 +50,6 @@ def handle_user_query(data):
     user_query = inputDict["query"]
     query_processor = QueryProcessor()
     # Retrieve the QueryProcessor instance from the request context
-    # query_processor = getattr(request, 'query_processor', None)
     if query_processor is None:
         return  # Handle the case where the instance is not found
 
