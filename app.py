@@ -31,9 +31,9 @@ def index():
     return "<h1>Test App</h1>"
 
 
-# @socketio.on('connect')
-# def handle_connect():
-#     print('Client connected to the server')
+@socketio.on('connect')
+def handle_connect():
+    print('Client connected to the server')
 #     # data = {"predicted": "what"}
 #     # emit("predicted_query_type",json.dumps(data))
 #
