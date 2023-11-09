@@ -16,7 +16,7 @@ def handle_predicted(data):
     print(f'final emit: {json.loads(data)}')
 
 # Connect to the Flask-SocketIO server
-sio.connect('http://35.229.156.211',wait_timeout=15)
+sio.connect('http://localhost',wait_timeout=15)
 
 # Send a user query to the server
 sio.emit('connect')
