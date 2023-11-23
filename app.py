@@ -34,14 +34,6 @@ def index():
 @socketio.on('connect')
 def handle_connect():
     print('Client connected to the server')
-#     # data = {"predicted": "what"}
-#     # emit("predicted_query_type",json.dumps(data))
-#
-#     # Create a new QueryProcessor instance for each connection
-#     query_processor = QueryProcessor()
-#
-#     # Store the QueryProcessor instance in the current request context
-#     request.query_processor = query_processor
 
 
 @socketio.on('user_query')
@@ -56,14 +48,8 @@ def handle_user_query(data):
     # Continue with processing the user query using the query_processor instance
     predicted_query_type = query_processor.predict_query_type(user_query)
 
-    # Uncomment and implement the other parts of your logic as needed
-    # recommended_questions = query_processor.generate_recommended_questions(predicted_query_type)
-    # minimum_elements = query_processor.find_minimum_elements(predicted_query_type)
-
     # Emit the results back to the client
     emit('predicted_query_type', json.dumps(predicted_query_type))
-    # emit('recommended_questions', recommended_questions)
-    # emit('minimum_elements', minimum_elements)
 
 
 if __name__ == '__main__':
